@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>luke li</title>
+<style>
+  :root {
+    --bg: #FAF7EE;
+    --ink: #1F1E1A;
+    --muted: #8A8272;
+    --line: #E1DACB;
+    --accent: #4B5D45;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { -webkit-font-smoothing: antialiased; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'SF Mono', 'IBM Plex Mono', ui-monospace, 'Courier New', monospace;
+    font-size: 15px;
+    line-height: 1.7;
+    padding: 0 20px;
+  }
+
+  .wrap {
+    max-width: 620px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .path {
+    padding: 48px 0 8px;
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  .path a { color: var(--muted); text-decoration: none; }
+  .path a:hover { color: var(--ink); }
+
+  h1 {
+    font-size: 22px;
+    font-weight: 700;
+    padding: 4px 0 20px;
+    letter-spacing: -0.01em;
+  }
+
+  h1 .dot { color: var(--accent); }
+
+  nav {
+    display: flex;
+    gap: 4px;
+    padding-bottom: 32px;
+    font-size: 13.5px;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    color: var(--muted);
+    text-decoration: none;
+    padding: 2px 4px;
+  }
+
+  nav a:hover, nav a:focus-visible {
+    color: var(--ink);
+  }
+
+  main { flex: 1; padding-bottom: 40px; }
+
+  p { margin-bottom: 14px; max-width: 54ch; }
+
+  .section-label {
+    color: var(--muted);
+    font-size: 12px;
+    text-transform: lowercase;
+    letter-spacing: 0.08em;
+    border-top: 1px solid var(--line);
+    margin-top: 32px;
+    padding-top: 24px;
+    margin-bottom: 20px;
+  }
+
+  section:first-of-type .section-label { border-top: none; margin-top: 0; }
+
+  .proj {
+    padding: 24px 0;
+  }
+
+  .proj img {
+    width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .proj-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .proj-head b { font-size: 15px; }
+
+  .proj-tag {
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .status {
+    font-size: 11px;
+    text-transform: lowercase;
+    letter-spacing: 0.06em;
+    padding: 2px 8px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  .status.active { color: var(--accent); border-color: var(--accent); }
+  .status.shelved { color: var(--muted); }
+  .status.sold { color: #8A5A2B; border-color: #D8C2A0; }
+
+  .proj p { color: #4A4738; font-size: 14px; margin-top: 8px; margin-bottom: 0; }
+
+  a.inline {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+  }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 20px 0 32px;
+    color: var(--muted);
+    font-size: 12.5px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="path">/ home</div>
+
+  <h1>luke li<span class="dot">.</span></h1>
+
+  <nav>
+    <a href="#about">[ about ]</a>
+    <a href="#projects">[ projects ]</a>
+    <a href="#contact">[ contact ]</a>
+  </nav>
+
+  <main>
+    <section id="about">
+      <div class="section-label">about</div>
+      <p>
+        I'm a student developer and entrepreneur. I like building real, working
+        things — a web app for a school organization, a small product business —
+        and picking up whatever skill the project needs along the way.
+      </p>
+      <p>
+        Currently working with Firebase and JavaScript, and learning Python.
+      </p>
+    </section>
+
+    <section id="projects">
+      <div class="section-label">projects</div>
+
+      <div class="proj">
+        <img src="assets/asb-hub.png" alt="ASB Hub dashboard screenshot">
+        <div class="proj-head">
+          <b>ASB Hub</b>
+          <span class="status active">active</span>
+        </div>
+        <div class="proj-tag">firebase · js</div>
+        <p>Web app for my school's student leadership program — events, notes, ideas, chat, and a people directory for the whole ASB team.</p>
+      </div>
+
+      <div class="proj">
+        <img src="assets/financial-manager.png" alt="Financial Manager dashboard screenshot">
+        <div class="proj-head">
+          <b>Financial Manager</b>
+          <span class="status active">in progress</span>
+        </div>
+        <div class="proj-tag">firebase · js</div>
+        <p>Companion tool for tracking club budgets, hours, and funding requests, kept separate for access control on financial data.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <span><a class="inline" href="mailto:youremail@example.com">youremail@example.com</a></span>
+    <span>built by hand, 2026</span>
+  </footer>
+
+</div>
+</body>
+</html>
